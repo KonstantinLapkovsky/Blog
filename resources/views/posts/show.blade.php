@@ -10,15 +10,10 @@
 
 			<ul>
 				@foreach ($post->tags as $tag)
-
 					<li>
-
 						<a href="/posts/tags/{{ $tag->name }}">{{ $tag->name }}</a>
-
 					</li>
-
 				@endforeach
-
 			</ul>
 
 		@endif
@@ -34,7 +29,6 @@
 			@foreach ($post->comments as $comment)
 
 			<li class="list-group-item">
-
 			<strong>
 					
 				{{ $comment->created_at->diffForHumans() }}: &nbsp;
@@ -51,11 +45,8 @@
 		</ul>
 
 		</div>
-		
-		@if (auth()->check())
 
 		{{-- Add a comment --}}
-
 		<hr>
 
 		<div class="card">
@@ -63,12 +54,13 @@
 			<div class="card-block">
 				
 				<form method="POST" action="/posts/{{ $post->id }}/comments">
-				
 				{{ csrf_field() }}
 					
 					<div class="form-group">
 						
-						<textarea name="body" placeholder="Your comment here." class="form-control">	
+						<textarea name="body" placeholder="Your comment here." class="form-control">
+							
+							
 
 						</textarea>
 
@@ -89,9 +81,6 @@
 			</div>
 
 		</div>
-
-		@endif
-
 	</div>
 
 @endsection

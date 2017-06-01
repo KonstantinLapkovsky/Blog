@@ -8,7 +8,7 @@ use Carbon\Carbon;
 
 class PostsController extends Controller
 {
-    public function __construct()
+    public function __ocnstruct()
     {
         $this->middleware('auth')->except(['index', 'show']);
     }
