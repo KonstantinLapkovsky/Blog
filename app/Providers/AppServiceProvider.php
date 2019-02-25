@@ -17,7 +17,6 @@ class AppServiceProvider extends ServiceProvider
             $archives = \App\Post::archives();
             $tags = \App\Tag::has('posts')->pluck('name');
             $view->with(compact(['archives', 'tags']));
-            
         });
     }
 

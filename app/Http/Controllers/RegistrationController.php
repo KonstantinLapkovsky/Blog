@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Http\Requests\RegistrationForm;
 
 class RegistrationController extends Controller
@@ -14,7 +13,6 @@ class RegistrationController extends Controller
 
     public function store(RegistrationForm $form)
     {
-
         $form->persist();
     	
         session()->flash('message', 'Thanks so much for signing up!');

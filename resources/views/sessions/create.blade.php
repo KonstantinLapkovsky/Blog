@@ -1,39 +1,26 @@
 @extends ('layouts.master')
 
 @section ('content')
-	<div class="col-md-8">
-		
-		<h1>Sign in</h1>
+<div class="col-md-8">
+	<h1>Sign in</h1>
+	<form method="POST" action="/login">
+		{{ csrf_field() }}
+		<div class="form-group">
+			<label for="email">Email:</label>
+			<input type="email" class="form-control" id="email" name="email" required>
+		</div>
 
-		<form method="POST" action="/login">
+		<div class="form-group">
+			<label for="password">Password:</label>
+			<input type="password" class="form-control" id="password" name="password" required>
+		</div>
 
-			{{ csrf_field() }}
-			
-			<div class="form-group">
-				
-				<label for="email">Email:</label>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary">Sign in</button>
+		</div>
 
-				<input type="email" class="form-control" id="email" name="email" required>
+		@include ('layouts.errors')
 
-			</div>
-
-			<div class="form-group">
-				
-				<label for="password">Password:</label>
-
-				<input type="password" class="form-control" id="password" name="password" required>
-
-			</div>
-
-			<div class="form-group">
-				
-				<button type="submit" class="btn btn-primary">Sign in</button>
-
-			</div>
-
-			@include ('layouts.errors')
-
-		</form>
-
-	</div>
+	</form>
+</div>
 @endsection
